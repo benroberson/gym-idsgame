@@ -4307,9 +4307,10 @@ class IdsGameMinimalDefenseV19Env(AttackerEnv):
         :param initial_state_path: path to the initial state (if none, use default)
         :param idsgame_config: configuration of the environment (if not specified a default config is used)
         """
+        print("dlkfjw3oj89w3fm2q892w3j8r923jfm2rjth7i3ehjrf7823n9rtmbgw3jmrvf98ow7rofv87w937rjmgv92732rv]729837vr92v797j@)()()%W@(@W#)(|@#)()(@$)@(@)(@)()(%$#)(&#&)@)(!@)!!)(!)!(!))(@)!))()(!@@@@@@$$###|#@##)%$(#(%)#)")
         from gym_idsgame.agents.bot_agents.defend_minimal_value_bot_agent import DefendMinimalValueBotAgent
         if idsgame_config is None:
-            game_config = GameConfig(num_layers=1, num_servers_per_layer=2, num_attack_types=4, max_value=9,
+            game_config = GameConfig(num_layers=1, num_servers_per_layer=6, num_attack_types=4, max_value=9,
                                      min_random_a_val=0, min_random_d_val=7, min_random_det_val=1,
                                      reconnaissance_actions=True)
             game_config.set_initial_state(defense_val=9, attack_val=0, num_vulnerabilities_per_node=1, det_val=1,
