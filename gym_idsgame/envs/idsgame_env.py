@@ -65,11 +65,11 @@ class IdsGameEnv(gym.Env, ABC):
         }
         self.reward_range = (float(constants.GAME_CONFIG.NEGATIVE_REWARD), float(constants.GAME_CONFIG.POSITIVE_REWARD))
         self.num_states = self.idsgame_config.game_config.num_nodes
-        self.num_states_full = int(math.pow(self.idsgame_config.game_config.max_value+1,
+        self.num_states_full = int(pow(self.idsgame_config.game_config.max_value+1,
                                         self.idsgame_config.game_config.num_nodes*
                                         (self.idsgame_config.game_config.num_attack_types+1)))
         if self.idsgame_config.game_config.network_config.fully_observed:
-            self.num_states_full = int(math.pow(self.idsgame_config.game_config.max_value+1,
+            self.num_states_full = int(pow(self.idsgame_config.game_config.max_value+1,
                                             self.idsgame_config.game_config.num_nodes *
                                             (self.idsgame_config.game_config.num_attack_types+1)* 2))
         self.num_attack_actions = self.idsgame_config.game_config.num_attack_actions
@@ -4749,7 +4749,7 @@ class IdsGameRandomDefenseV21Env(AttackerEnv):
         """
         from gym_idsgame.agents.bot_agents.random_defense_bot_agent import RandomDefenseBotAgent
         if idsgame_config is None:
-            game_config = GameConfig(num_layers=1, num_servers_per_layer=2, num_attack_types=4, max_value=9,
+            game_config = GameConfig(num_layers=3, num_servers_per_layer=10, num_attack_types=4, max_value=9,
                                      min_random_a_val=0, min_random_d_val=1, min_random_det_val=1,
                                      reconnaissance_actions=True)
             game_config.set_initial_state(defense_val=1, attack_val=0, num_vulnerabilities_per_node=0, det_val=1,
@@ -4798,7 +4798,7 @@ class IdsGameMinimalDefenseV21Env(AttackerEnv):
         """
         from gym_idsgame.agents.bot_agents.defend_minimal_value_bot_agent import DefendMinimalValueBotAgent
         if idsgame_config is None:
-            game_config = GameConfig(num_layers=1, num_servers_per_layer=10, num_attack_types=4, max_value=9,
+            game_config = GameConfig(num_layers=3, num_servers_per_layer=10, num_attack_types=4, max_value=9,
                                      min_random_a_val=0, min_random_d_val=1, min_random_det_val=1,
                                      reconnaissance_actions=True)
             game_config.set_initial_state(defense_val=1, attack_val=0, num_vulnerabilities_per_node=0, det_val=1,
@@ -4846,7 +4846,7 @@ class IdsGameRandomAttackV21Env(DefenderEnv):
         """
         from gym_idsgame.agents.bot_agents.random_attack_bot_agent import RandomAttackBotAgent
         if idsgame_config is None:
-            game_config = GameConfig(num_layers=1, num_servers_per_layer=2, num_attack_types=4, max_value=9,
+            game_config = GameConfig(num_layers=2, num_servers_per_layer=10, num_attack_types=4, max_value=9,
                                      min_random_a_val=0, min_random_d_val=1, min_random_det_val=1,
                                      reconnaissance_actions=True)
             game_config.set_initial_state(defense_val=1, attack_val=0, num_vulnerabilities_per_node=0, det_val=1,
@@ -4895,7 +4895,7 @@ class IdsGameMaximalAttackV21Env(DefenderEnv):
         """
         from gym_idsgame.agents.bot_agents.attack_maximal_value_bot_agent import AttackMaximalValueBotAgent
         if idsgame_config is None:
-            game_config = GameConfig(num_layers=1, num_servers_per_layer=2, num_attack_types=4, max_value=9,
+            game_config = GameConfig(num_layers=2, num_servers_per_layer=10, num_attack_types=4, max_value=9,
                                      min_random_a_val=0, min_random_d_val=1, min_random_det_val=1,
                                      reconnaissance_actions=True)
             game_config.set_initial_state(defense_val=1, attack_val=0, num_vulnerabilities_per_node=0, det_val=1,

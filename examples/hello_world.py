@@ -57,7 +57,7 @@ def defense_against_random_attack_env():
 
 def two_agents_env():
     versions = range(0,20)
-    version = versions[0]
+    version = versions[19]
     env_name = "idsgame-v" + str(version)
     env = gym.make(env_name)
     env.reset()
@@ -67,13 +67,14 @@ def two_agents_env():
         defense_action = env.defender_action_space.sample()
         a = (attack_action, defense_action)
         obs, reward, done, _, info = env.step(a)
+        env.render()
 
 def main():
     #attack_against_baseline_defense_env()
-    attack_against_random_defense_env()
+    #attack_against_random_defense_env()
     #defense_against_baseline_attack_env()
     #defense_against_random_attack_env()
-    #two_agents_env()
+    two_agents_env()
 
 if __name__ == '__main__':
     main()
